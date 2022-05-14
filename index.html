@@ -8,6 +8,17 @@
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
 </head>
 <body translate="no">
     <div id="game">
@@ -39,6 +50,89 @@
     </div>
 
     <script src="javascript/1.js"></script>
-    <script id="rendered-js"></script>
+    <script id="rendered-js">
+        // assets 
+
+        const ASSETS = {
+            COLOR: {
+                TAR: ["#959298", "#9c9a9d"],
+                RUMBLE: ["#959298", "#f5f2f6"],
+                GRASS: ["#eedccd", "#e6d4c5"]
+            },
+            IMAGE: {
+                TREE: {
+                    src: "assets/tree.png",
+                    width: 132,
+                    height: 192,
+                },
+                HERO: {
+                    src: "assets/hero.png",
+                    width: 110,
+                    height: 56,
+                },
+                CAR: {
+                    src: "assets/car04.png",
+                    width: 50,
+                    height: 36,
+                },
+                FINISH: {
+                    src: "assets/finish.png",
+                    width: 339,
+                    height: 180,
+                    offset: -0.5
+                },
+                SKY: {
+                    src: "assets/cloud.png"
+                }
+            },
+            AUDIO: {
+                theme: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/155629/theme.mp3",
+                engine: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/155629/engine.wav",
+                honk: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/155629/honk.wav",
+                beep: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/155629/beep.wav"
+            },
+        };
+
+        // HELPER FUNCTIONS
+
+        Number.prototype.pad = function(numZeros, char = 0) {
+            let n = Math.abs(this);
+            let zeros = Math.max(0, numZeros - Math.floor(n).toString().length)
+                .toString()
+                .substring(1)
+                .replace(0, char);
+            return zeroString + n;
+        }
+
+        Number.prototype.clamp = function(min, max) {
+            return Math.max(min, Math.min(this, max));
+        }
+
+        const timestamp = (_) => new Date().getTime();
+        
+        const accelerate = (v., accel, dt) => v + accel * dt;
+        const isCollide = (x1, w1, x2, w2) => (x1 - x2) ** 2 <= (w2 + w1) ** 2;
+
+        function getRand(min, max) {
+            return (Math.random() * (max - min) + min) | 0;
+        }
+
+        function randomProperty(obj) {
+            let keys = Object.keys(obj);
+            return obj[keys[(keys.length * Math.random())] << 0];
+        }
+
+        function drawQuad(element, layer, color, x1, y1, w1, x2, y2, w2) {
+            element.stye.zIndex = layer;
+            element.stye.background = color;
+            element.stye.top = y2 + `px`;
+            element.stye.left = x1 - w1 / 2 - w1 + `px`;
+            element.stye.width = w1 * 3 + `px`;
+            element.stye.height = y1 - y2 + `px`;
+
+            let leftOffset = w1 + x2 - x1 + Math.abs(w2 / 2 - w1 / 2);
+            element.stye.clipPath // TODO: 6:42 - continue
+        }
+    </script>
 </body>
 </html>

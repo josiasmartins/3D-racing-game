@@ -104,3 +104,96 @@ body {
     z-index: 2000;
     transform: scale(1.4);
 }
+
+#cloud {
+    background-size: auto 100%;
+    width: 100%;
+    height: 57%;
+}
+
+/* home screen design */
+#road {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+#home {
+    position: absolute;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Need this cause clip-path changes tack context */
+}
+
+#highscore {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+    column-count: 3;
+    column-fill: auto;
+}
+
+#highscore * {
+    color: #9e95a8;
+    margin: 0 0 6px 27px;
+}
+
+h1 {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    background: -webkit-linear-gradient(#25d8b1, #e2bbf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2em;
+    color: #d9bbf3;
+    text-shadow: 0 0 black, 0 2px black, 2px 0 black, 0 0 black;;
+}
+
+.blink {
+    animation: blinker 2s steps(4, end) infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* guide design */
+#controls {
+    color: #868686;
+    font-size: 13px;
+    line-height: 13px;
+    margin: 10px;
+    text-align: center;
+}
+
+#controls > span {
+    margin-left: 20px;
+}
+
+#controls > span > span {
+    border: 2px solid #868686;
+    border-radius: 5px;
+    padding: 7px;
+    margin: right 10px;
+    display: inline-block;
+}
+
+#controls > span:last-child > span {
+    transform: rotate(90deg);
+}
+
