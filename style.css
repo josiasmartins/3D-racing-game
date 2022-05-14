@@ -1,0 +1,106 @@
+body {
+    background: #222;
+    font-family: "Press Start 2P" monospace;
+    font-smooth: never;
+    height: 98vh;
+}
+
+/* UI Design */
+.topUI {
+    position: absolute;
+    z-index: 1000; /* ned this because clip-path will change stack constant */
+
+    transform: translate(-50%, 25%);
+    text-shadow: -2px 0 black, 0 2px black, 2px black, 0 -2px black;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: 17px;
+}
+
+.topUI::before {
+    display: inline-block;
+    height: 17px;
+    padding: 17px 2px;
+    line-height: 19px;
+    font-size: 17px;
+    background: #fff;
+    text-shadow: none;
+    letter-spacing: 0;
+    border-radius: 6px;
+    margin-right: 30px;
+    border: 2px solid #7dd8c9;
+}
+
+#time {
+    left: 13%;
+    color: #f4f430;
+}
+
+#time::before {
+    content: "TIME";
+    color: #f57214;
+}
+
+#score {
+    left: 45%;
+}
+
+#score::before {
+    content: 'SCORE';
+    color: #a61a9d;
+}
+
+#lap {
+    left: 88%;
+    width: 45%;
+}
+
+#lap::before {
+    content: 'TAP';
+    color: #0082df;
+}
+
+#tacho {
+    position: absolute;
+    text-align: right;
+    bottom: 5%;
+    z-index: 2000;
+    color: #e62e13;
+    text-shadow: -2px 0 black, 0 2px black, 2px black, 0 -2px black;
+    letter-spacing: 2px;
+    font-size: 23px;
+}
+
+#tacho::after {
+    content: 'kh/h';
+    color: #fab453;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+/* road design */
+#game {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #222;
+    user-select: none;
+    transition: opacity 10s;
+}
+
+#road {
+    transition: opacity 2s;
+    transition-timing-function: steps(8, end);
+}
+
+#road * {
+    position: absolute;
+    image-rendering: pixelated;
+}
+
+#hero {
+    background-repeat: no-repeat;
+    background-position: -110px 0;
+    z-index: 2000;
+    transform: scale(1.4);
+}
