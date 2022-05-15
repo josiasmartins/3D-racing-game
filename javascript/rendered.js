@@ -4,7 +4,7 @@
 
 const ASSETS = {
     COLOR: {
-        TAR: ["#959298", "#9c9a9d"],
+        TAR: ["#000", "#000"],
         RUMBLE: ["#959298", "#f5f2f6"],
         GRASS: ["#eedccd", "#e6d4c5"],
     },
@@ -719,4 +719,3 @@ function init() {
 }
 
 init();
-      //# sourceURL=pen.js

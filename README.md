@@ -1,7 +1,9 @@
 # 3D Racing Game
 
 ## demo
-![demo](./assets/)
+![demo](./assets/3D-racing-game.gif)
+
+#### obs: gif speed 3.0
 
 ### building 
 - HTML
@@ -9,3 +11,4 @@
 - CSS
 
 #### [autor font](https://www.youtube.com/watch?v=EOemfVmD-1M);
+

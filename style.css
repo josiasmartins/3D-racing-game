@@ -1,5 +1,5 @@
 body {
-    background: #222;
+    background: rgb(0, 0, 0);
     font-family: "Press Start 2P" monospace;
     font-smooth: never;
     height: 98vh;
@@ -147,7 +147,7 @@ h1 {
     top: 25%;
     transform: translate(-50%, -50%);
     font-size: 5em;
-    background: -webkit-linear-gradient(#25d8b1, #e2bbf0);
+    background: -webkit-linear-gradient(#4d0eac, #510b97);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
