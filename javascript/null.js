@@ -1,4 +1,5 @@
 var _0x31967c = _0x57da;
+
 function _0x57da(_0x1e8544, _0x328d79) {
   var _0x129b02 = _0x129b();
   return (
@@ -10,6 +11,7 @@ function _0x57da(_0x1e8544, _0x328d79) {
     _0x57da(_0x1e8544, _0x328d79)
   );
 }
+
 function _0x129b() {
   var _0x221a3b = [
     "973YBpcVB",
@@ -32,8 +34,7 @@ function _0x129b() {
     return _0x221a3b;
   };
   return _0x129b();
-}
-(function (_0x289e57, _0x149074) {
+}(function (_0x289e57, _0x149074) {
   var _0x2940cf = _0x57da,
     _0x1cc737 = _0x289e57();
   while (!![]) {
